@@ -1,0 +1,10 @@
+^C:\USERS\TEST\DESKTOP\IPCA\COMPUTER VISION\VC_PROJ\BUILD\CMAKEFILES\12A6690ABBD02BFCA40BDD038DD404DE\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/Test/Desktop/IPCA/Computer Vision/VC_PROJ" "-BC:/Users/Test/Desktop/IPCA/Computer Vision/VC_PROJ/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/Users/Test/Desktop/IPCA/Computer Vision/VC_PROJ/build/Project.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

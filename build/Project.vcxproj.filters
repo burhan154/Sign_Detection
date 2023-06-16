@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Test\Desktop\IPCA\Computer Vision\VC_PROJ\src\CvControl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Test\Desktop\IPCA\Computer Vision\VC_PROJ\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Test\Desktop\IPCA\Computer Vision\VC_PROJ\src\processes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Test\Desktop\IPCA\Computer Vision\VC_PROJ\src\vc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Test\Desktop\IPCA\Computer Vision\VC_PROJ\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{061142C8-A704-3E37-86FB-9C6BC5B6FCEA}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
