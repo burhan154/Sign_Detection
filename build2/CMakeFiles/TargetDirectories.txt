@@ -1,3 +1,0 @@
-C:/Users/Test/Desktop/IPCA/Computer Vision/Proje/build/CMakeFiles/Project.dir
-C:/Users/Test/Desktop/IPCA/Computer Vision/Proje/build/CMakeFiles/ALL_BUILD.dir
-C:/Users/Test/Desktop/IPCA/Computer Vision/Proje/build/CMakeFiles/ZERO_CHECK.dir
