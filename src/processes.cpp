@@ -32,13 +32,14 @@ int Processes::process(IVC *src){
     IVC *tempRed = vc_image_new(src->width, src->height, 3, 255);
     memcpy(tempRed->data, src->data, src->width * src->height* 3);
 
-    vc_show_blue_objects(tempBlue);
-    temp = process2(tempBlue,BLUE);
+    
+    vc_show_red_objects(tempRed);
+    temp = process2(tempRed,RED);
     //cout<<labelsnum<<endl;
     if (labelsnum == 0){
         //cout<<"-"<<labelsnum<<endl;
-         vc_show_red_objects(tempRed);
-         temp = process2(tempRed,RED);
+         vc_show_blue_objects(tempBlue);
+        temp = process2(tempBlue,BLUE);
     }
 
     //convertToColorImage(dest,src);
@@ -49,14 +50,9 @@ int Processes::process(IVC *src){
     {
         for (int i = 0; i < labelsnum; i++)
 	    {
-            if (blobs[i].area>10000&& blobs[i].area<40000) {
-
-                //cout<<"2.."<<i<<"-"<<labelsnum<<endl;
-                
+            if (blobs[i].area>8000&& blobs[i].area<50000) {
                 drawBox(src, blobs[i].x, blobs[i].y, blobs[i].width, blobs[i].height);
-                blobId = i;
-                ImageColor = detect_sign(blobs,blobId,src);
-                //cout<<ImageColor<<" ";
+                blobs[i].sign = detect_sign(blobs,i,src);
             }
         }
         //cout<<blobs[0].area<<" "<<blobs[0].xc<<endl;
@@ -88,8 +84,9 @@ IVC * Processes::process2(IVC *src,int color){
 	return dest2;
 }
 
-string Processes::getSign(){
-    switch(ImageColor){
+string Processes::getSign(int imageColor){
+    string text="";
+    switch(imageColor){
         case STOP: text="STOP";
         break;
         case CAR: text="CAR";
@@ -111,16 +108,18 @@ string Processes::getSign(){
 void Processes::drawText()
 {
     if (blobs != NULL){
-        if(blobs[blobId].area>10000&& blobs[blobId].area<40000 && labelsnum>0){
-            //cout<<labelsnum<<endl;
-            getSign();
-            int x = blobs[blobId].x +blobs[blobId].width -70;
-            int y = blobs[blobId].y + blobs[blobId].height + 50;
 
-            if(x>0){
-                putText(*screen ,text,Point(x, y), FONT_HERSHEY_COMPLEX, 1, Scalar(0, 128, 0), 1, LINE_AA);
+        for (int i = 0; i < labelsnum; i++)
+	    {
+            if (blobs[i].area>8000&& blobs[i].area<50000) {
+
+                int x = blobs[i].x +blobs[i].width -70;
+                int y = blobs[i].y + blobs[i].height + 50;
+
+                if(x>0){
+                    putText(*screen ,getSign(blobs[i].sign),Point(x, y), FONT_HERSHEY_COMPLEX, 1, Scalar(0, 128, 0), 1, LINE_AA);
+                }
             }
-            
         }
      }
 }

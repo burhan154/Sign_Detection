@@ -26,12 +26,9 @@ private:
     IVC * Processes::process2(IVC *src,int color);
     Mat * screen;
 
-    string text;
-    int ImageColor;
     OVC* blobs;
-    int blobId;
     int labelsnum;
-    string Processes::getSign();
+    string Processes::getSign(int imageColor);
 public:
     Mat *start(Mat *frame);
     void drawText();

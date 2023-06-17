@@ -1323,7 +1323,7 @@ int vc_show_blue_objects(IVC* image)
             unsigned char blue = pixel[0];
 
             // Thresholding condition: check if the pixel is within the red color range
-            if (!(red < 100 && green < 100 && blue > 100))
+            if (!(red < 100 && green < 100 && blue > 90))
             {
                 // Make non-red pixels black
                 pixel[0] = 0;  // Blue channel
@@ -1803,7 +1803,7 @@ int drawBox(IVC* colorImage, int x, int y, int width, int height) {
 
         if(grayData[i]==255){
             colorImage->data[i * 3] = 0;
-            colorImage->data[i * 3 + 1] = 0;
+            colorImage->data[i * 3 + 1] = 128;
             colorImage->data[i * 3 + 2] = 0;
         }
     }

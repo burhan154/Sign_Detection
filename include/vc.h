@@ -31,6 +31,7 @@ typedef struct {
 	int perimeter;				// Perímetro
 	int label;					// Etiqueta
 	int color;
+	int sign;
 } OVC;
 
 
